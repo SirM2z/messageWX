@@ -1,0 +1,297 @@
+body {
+  font-family: 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background:#f8f8f8;
+}
+
+
+/*覆盖样式*/
+.ui-btn-primary {
+  background-color: #228feb;
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0.5,#228feb),to(#228feb));
+  color: #fff;
+  background-clip: padding-box;
+}
+.ui-btn-primary:active{
+  background:#2272eb;
+}
+#index .ui-tab-nav .ui-reddot-s:after,#replyIndex .ui-tab-nav .ui-reddot-s:after,#adminIndex .ui-tab-nav .ui-reddot-s:after {
+  top: 3px;
+  right: 3px;
+}
+.ui-icon-return{
+  font-size: 25px;
+}
+.icon-cc-head-o{
+  font-size: 25px;
+}
+
+/*公用样式*/
+.hide {
+  display: none;
+}
+section{
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;right:0;
+	background:#f8f8f8;
+	padding-top:45px;
+}
+section.animated{
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+}
+.color-0{
+  background-color: #4bb622;
+}
+.color-1{
+  background-color: #2772ee;
+}
+.color-2{
+  background-color: #f88311;
+}
+.color-3{
+  background-color: #e11144;
+}
+.fright{
+  float: right;
+}
+.fleft{
+  float: left;
+}
+
+/*头部样式*/
+.ui-header{
+	background-color: #228feb;
+	z-index: 1;
+}
+.ui-header .ui-personal {
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 55%;
+  margin-top: -22px;
+}
+
+/*login页样式*/
+.ui-form {
+	background-color:#f8f8f8;
+}
+#login{
+  margin-top: 10px; 
+}
+#login .ui-form-item{
+  background-color: #fff; 
+  height: 36px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+#login .ui-form-item label{
+  text-align: left;
+  padding-left: 15px;
+}
+#login .ui-form-item a{
+  line-height: 36px;
+}
+#login .ui-btn-wrap{
+  padding: 20px 0;
+}
+#login .ui-btn-wrap button{
+  width:80%;
+  margin: 0 auto;
+}
+#login .ui-btn-wrap button:active{
+  background:#228feb;;
+}
+
+/*bind页submessage页样式*/
+.ui-form {
+	background-color:#f8f8f8;
+}
+#bind input,#submessage input,#submessage select{
+  position: relative;
+}
+#bind,#submessage{
+  margin-top: 10px; 
+}
+#bind .ui-form-item,#submessage .ui-form-item{
+  background-color: #fff; 
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+#bind .ui-form-item label,#submessage .ui-form-item label{
+  text-align: left;
+}
+#bind .ui-btn-wrap,#submessage .ui-btn-wrap{
+  padding: 20px 0;
+}
+#bind .ui-btn-wrap button,#submessage .ui-btn-wrap button{
+  width:80%;
+  margin: 0 auto;
+}
+#bind .ui-btn-wrap button:active,#submessage .ui-btn-wrap button:active{
+  background:#228feb;;
+}
+#bind .ui-form-item .reply-info{
+  color:#888;
+}
+
+/*index页样式*/
+#index .ui-notice,#replyIndex .ui-notice,#adminIndex .ui-notice{
+  top: 0;
+}
+#index .ui-tab .ui-list .ui-border-t p:first-child,#replyIndex .ui-tab .ui-list .ui-border-t p:first-child,#adminIndex .ui-tab .ui-list .ui-border-t p:first-child{
+  padding-bottom: 5px;
+}
+#index .ui-tab .ui-list .ui-border-t p span:first-child,#replyIndex .ui-tab .ui-list .ui-border-t p span:first-child,#adminIndex .ui-tab .ui-list .ui-border-t p span:first-child{
+  display: inline-block;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  padding: 1px 6px;
+  margin-right: 8px;
+}
+#index .ui-tab .ui-list .ui-border-t p span:last-child,#replyIndex .ui-tab .ui-list .ui-border-t p span:last-child,#adminIndex .ui-tab .ui-list .ui-border-t p span:last-child{
+  padding-top: 1px;
+  float: right;
+}
+#index .ui-tab .ui-list .ui-border-t p span.un-reply,#replyIndex .ui-tab .ui-list .ui-border-t p span.un-reply,#adminIndex .ui-tab .ui-list .ui-border-t p span.un-reply{
+  color: #228feb;
+}
+#index .ui-tab .ui-list .ui-border-t div,#replyIndex .ui-tab .ui-list .ui-border-t div,#adminIndex .ui-tab .ui-list .ui-border-t div{
+  line-height: 28px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+#index .ui-tab .ui-list .ui-border-t div.touched,#replyIndex .ui-tab .ui-list .ui-border-t div.touched,#adminIndex .ui-tab .ui-list .ui-border-t div.touched{
+  color: #888;
+}
+#index #write{
+  z-index: 100;
+  position: fixed;
+  bottom: 5%;
+  right: 10%;
+  color: #228feb;
+}
+#index #write i{
+  font-size: 30px;
+}
+#index #wrapper,#adminIndex #wrapper,#replyIndex #wrapper-no,#replyIndex #wrapper-have {
+  position: absolute;
+  z-index: 1;
+  top: 90px;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+#index #scroller,#replyIndex #scroller,#adminIndex #scroller  {  
+  position: absolute;
+  z-index: 1;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  width: 100%;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  text-size-adjust: none;
+} 
+#index .ui-list,#replyIndex .ui-list,#adminIndex .ui-list{
+  border-bottom: 1px solid #e0e0e0;
+}
+#index #wrapper #more,#replyIndex #wrapper-no #more,#replyIndex #wrapper-have #more,#adminIndex #wrapper #more  {
+  text-align:center;
+  padding: 5px 0;
+}
+#index .ui-list li,#replyIndex .ui-list li,#adminIndex .ui-list li{
+  border-top: 1px solid #e0e0e0;
+  padding-bottom: 0;
+}
+#replyIndex .havereply-reddot-s,#adminIndex .havereply-reddot-s{
+  position: relative;
+}
+#replyIndex .havereply-reddot-s:after,#adminIndex .havereply-reddot-s:after{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: #f74c31;
+  border-radius: 5px;
+  right: 5px;
+  top: 3px;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+#replyIndex .ui-reddot-s,#adminIndex .ui-reddot-s{
+  display: block;
+}
+#index .ui-reddot-s:after,#replyIndex .ui-reddot-s:after,#adminIndex .ui-reddot-s:after{
+  top: 0;
+  right: 0;
+}
+#replyIndex .ui-notice{
+  width: 50%;
+}
+#replyIndex .li-1,#replyIndex .li-2{
+  max-height: 580px;
+}
+/*submessage页样式*/
+#submessage .ui-textarea{
+  margin-top: 10px;
+  height: 100px;
+  position: relative;
+}
+#submessage .ui-textarea i{
+  position: absolute;
+  right: 20px;
+  top: 72px;
+  color: #888;
+  font-size: 13px;
+}
+#submessage .ui-form-item textarea {
+  padding-left: 10px;
+  padding-top: 5px;
+  height: 100px;
+}
+
+/*message页样式*/
+#message .ui-list{
+  padding: 5px 5%;
+  width:90%;
+  border-bottom: 1px solid #e0e0e0;
+}
+#message .ui-list .ui-border-t .ui-list-info p{
+  color: #777;
+}
+#message .ui-list .ui-border-t .ui-list-info p:first-child{
+  margin-bottom: 10px;
+}
+#message .ui-list .ui-border-t .reply-head p:last-child i{
+  display: inline-block;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  padding: 1px 6px;
+}
+#message .suggessinfo{
+  padding: 3px 10px 15px;
+  line-height: 28px;
+}
+#message .ui-input-wrap{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,.6);
+}
+#message .ui-list>.ui-border-t{
+}

@@ -1,0 +1,43 @@
+<div class="ui-tab">
+  <ul class="ui-tab-nav ui-border-b">
+    <li class="current <% if(isreds){ %> ui-reddot-s <% } %> ">留言板<i></i></li>
+    <li></li>
+    <li></li>
+  </ul>
+  
+  <% if(adminMessageList.length>0){ %>
+  
+  <div id="wrapper" class="<% if(!adminMessageList || adminMessageList.length<=0){ %> hide <% } %> admin-wrapper">
+    <div id="scroller">
+      <ul class="ui-list ui-list-pure">
+        
+        <% for(var i=0,ilen=adminMessageList.length;i<ilen;i++){ %>
+        <li class="ui-border-t">
+          <p>
+            <span class="color-<%=adminMessageList[i].colorid %>"><%= adminMessageList[i].tname %></span>
+            <span class="date"><%=adminMessageList[i].createdate %></span>
+          </p>
+          <p>
+            <i><%= adminMessageList[i].sid %></i>
+            <span class="<% if(adminMessageList[i].state==1){ %> un-reply <% }%> <% if(adminMessageList[i].isred==1){ %> ui-reddot-s <% }%>">
+              <% if(adminMessageList[i].state==0){ %> 待回复 <% }else{ %> 已回复 <% } %>
+            </span>
+          </p>
+          <div class="<% if(adminMessageList[i].isread==1){ %> touched <% }%>" data-id="<%=adminMessageList[i].id %>" ><%=adminMessageList[i].content %></div>
+        </li>
+        <% } %>
+        
+      </ul>
+      <div id="more" class=""> <% if(isFinish){ %> 已无更多数据 <% }else{ %>上滑加载更多 <% } %> </div>  
+    </div>
+  </div>
+  
+  <% } %>
+  
+  
+</div>
+
+<div class="ui-notice <% if(adminMessageList.length>0){ %> hide <% } %>">
+  <i></i>
+  <p>还没有数据</p>
+</div>
