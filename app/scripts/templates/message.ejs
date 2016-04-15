@@ -1,0 +1,58 @@
+<div class="message-div">
+  
+  <ul class="ui-list ui-border-tb">
+    <li class="ui-border-t">
+      <div class="ui-avatar">
+        <span style="background-image:url(<%= messageDetail.headimgurl %>)"></span>
+      </div>
+      <div class="ui-list-info reply-head">
+        <p><span><%= messageDetail.username %></span><i class="fright"><%= messageDetail.sid %></i></p>
+        <p><span><%= messageDetail.createdate %></span><i class="fright color-<%=messageDetail.color  %>"><%= messageDetail.tname %></i></p>
+      </div>
+    </li>
+    <div class="suggessinfo">&nbsp;&nbsp;&nbsp;&nbsp;<%= messageDetail.content %></div>
+  </ul>
+  <% for(var i=0,ilen=messageDetail.list.length;i<ilen;i++){ %>
+  
+  <% if(messageDetail.list[i].isself==0){ %>
+  
+  <ul class="ui-list ui-border-tb other-reply">
+    <li class="ui-border-t">
+      <div class="ui-list-info">
+        <p><i><%= messageDetail.list[i].replyname %></i></p>
+        <p><span><%= messageDetail.list[i].rcreatedate %></span></p>
+      </div>
+      <div class="ui-avatar">
+        <span style="background-image:url(<%= messageDetail.list[i].headimgurl %>)"></span>
+      </div>
+    </li>
+    <div class="suggessinfo">&nbsp;&nbsp;&nbsp;&nbsp;<%= messageDetail.list[i].replycontent %></div>
+  </ul>
+  
+  <% }else{ %> 
+  
+  <ul class="ui-list ui-border-tb self-reply">
+    <li class="ui-border-t">
+      <div class="ui-avatar">
+        <span style="background-image:url(<%= messageDetail.list[i].headimgurl %>)"></span>
+      </div>
+      <div class="ui-list-info">
+        <p><i class="fright"><%= messageDetail.list[i].replyname %></i></p>
+        <p><span class="fright"><%= messageDetail.list[i].rcreatedate %></span></p>
+      </div>
+    </li>
+    <div class="suggessinfo">&nbsp;&nbsp;&nbsp;&nbsp;<%= messageDetail.list[i].replycontent %></div>
+  </ul>
+  
+  <% } %> 
+  
+  <% } %>
+  
+</div>
+<div style="height:50px;"></div>
+<div class="ui-input-wrap ui-border-t">
+  <div class="ui-input ui-border-radius">
+    <input type="text" class="reply-message" name="" value="" placeholder="我也说一句...">
+  </div>
+  <button class="ui-btn reply-btn">回复</button>
+</div>
