@@ -176,6 +176,7 @@ App.Views = App.Views || {};
               stayTime:2000,
               type:"success"
             });
+            App.g.user.set("contactmode", replyPhone.val().trim());
           } else {
             $.tips({
               content: result.msg,

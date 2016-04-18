@@ -15,6 +15,8 @@ window.App = {
     }
   },
   g: {
+    username:null,  //用户名
+    password:null,  //用户密码
     opencode:null,  //微信唯一标识
     schoolcode:null,  //学校标识
     token:null, //调用接口凭证
@@ -42,6 +44,7 @@ window.App = {
     isredsNo:null,  //回复人员列表--已回复--红点
     isredsHave:null,  //回复人员列表--待回复--红点
     ajaxIng:false,  //是否在执行ajax
+    roletype:null,  //登录人员类型
   },
   URL: {
     studentIsBinding:APIServerHost + '/personnel/student/studentisbinding/',  //获取学生绑定信息

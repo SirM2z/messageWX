@@ -100,11 +100,9 @@ App.Views = App.Views || {};
         // staffkey:App.g.studentkey,
         // studentkey:App.g.studentkey,
       };
-      if(App.g.rolename){
+      if(App.g.roletype || App.g.roletype==0){
         data.type=1;
-        if(App.g.rolename=='回复人员'){
-        }
-        if(App.g.rolename=='超级管理员' && $('ul.other-reply').length==0){
+        if(App.g.roletype==2 && $('ul.other-reply').length==0){
           $.tips({
             content: '需等待回复人员先回复',
             stayTime: 2000,

@@ -19,12 +19,21 @@ App.Views = App.Views || {};
 
     initialize: function () {
       //this.listenTo(this.model, 'change', this.render);
+      
+      if(localStorage.messageUsername){
+        App.g.username=localStorage.messageUsername;
+        App.g.password=localStorage.messagePassword;
+      }
+      
       this.$el.off();
       this.render();
     },
 
     render: function () {
-      this.$el.html(this.template());
+      this.$el.html(this.template({
+        username:App.g.username,
+        password:App.g.password
+      }));
     },
     
     login:function(){
@@ -59,7 +68,6 @@ App.Views = App.Views || {};
         data:{
           account:username.val().trim(),
           password:password.val().trim(),
-          schoolcode:App.g.schoolcode,
           opencode:App.g.opencode
         },
         type:'POST',
@@ -70,18 +78,21 @@ App.Views = App.Views || {};
             App.g.token = result.data.token;
             App.g.adminid = result.data.adminid;
             App.g.rolename = result.data.rolename;
+            App.g.roletype = result.data.roletype;
             App.g.staffkey = result.data.staffkey;
             App.loading();
-            if(App.g.rolename=='回复人员'){
-              
+            if(App.g.roletype==2){
+              Backbone.history.navigate('#adminIndex', {trigger: true});
+            }else{
               //获取回复人员个人资料
               _selfthis.getReplyInfo();
               //Backbone.history.navigate('#replyIndex', {trigger: true});
               
             }
-            if(App.g.rolename=='超级管理员'){
-              Backbone.history.navigate('#adminIndex', {trigger: true});
-            }
+            App.g.username=username.val().trim();
+            App.g.password=password.val().trim();
+            localStorage.messageUsername=App.g.username;
+            localStorage.messagePassword=App.g.password;
           }else{
             $.tips({
               content:result.msg,
@@ -105,7 +116,7 @@ App.Views = App.Views || {};
       App.loading(true);
       var _selfthis=this;
       $.ajax({
-        url: App.URL.getReplyInfo + '?staffkey='+ App.g.staffkey +'&token='+ App.g.token,
+        url: App.URL.getReplyInfo + '?token='+ App.g.token,
         type: 'GET',
         dataType: 'JSON',
         success: function success(response) {

@@ -138,7 +138,8 @@ section.animated{
 
 /*index页样式*/
 #index .ui-notice,#replyIndex .ui-notice,#adminIndex .ui-notice{
-  top: 0;
+  top: 90px;
+  height: 80%;
 }
 #index .ui-tab .ui-list .ui-border-t p:first-child,#replyIndex .ui-tab .ui-list .ui-border-t p:first-child,#adminIndex .ui-tab .ui-list .ui-border-t p:first-child{
   padding-bottom: 5px;
@@ -267,6 +268,9 @@ section.animated{
   white-space:nowrap; 
   overflow:hidden; 
   text-overflow:ellipsis;
+}
+#replyIndex .ui-tab-nav li{
+  z-index: 100;
 }
 
 

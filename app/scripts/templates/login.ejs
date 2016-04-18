@@ -1,11 +1,11 @@
 <div class="ui-form ui-border-t">
   <div class="ui-form-item ui-border-b">
       <label>帐号</label>
-      <input id="username" type="text" placeholder="请输入帐号">
+      <input id="username" type="text" placeholder="请输入帐号" value="<% if(username){ %><%= username %><% } %>">
   </div>
   <div class="ui-form-item ui-border-b">
       <label>密码</label>
-      <input id="password" type="password" placeholder="请输入密码">
+      <input id="password" type="password" placeholder="请输入密码" value="<% if(password){ %> <%= password %> <% } %>">
   </div>
   <div class="ui-btn-wrap">
     <button class="ui-btn-lg  ui-btn-primary login-btn">

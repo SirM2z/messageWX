@@ -14,6 +14,7 @@ App.Routers = App.Routers || {};
       'message':'message',
       'replyIndex':'replyIndex',
       'adminIndex':'adminIndex',
+      'error':'error',
       '*error' : 'index'
     },
     login: function(opencode){
@@ -107,18 +108,24 @@ App.Routers = App.Routers || {};
       $('.ui-header h1').text('服务监督');
       this.hidesection();
       $('#submessage').removeClass('hide');
+      $('.ui-personal a').removeClass('hide');
     },
     message: function(){
       new App.Views.Message();
       $('.ui-header h1').text('服务监督');
       this.hidesection();
       $('#message').removeClass('hide');
+      $('.ui-personal a').removeClass('hide');
+      if(App.g.roletype && App.g.roletype==2){
+        $('.ui-personal a').addClass('hide');
+      }
     },
     replyIndex: function(){
       new App.Views.ReplyIndex();
       $('.ui-header h1').text('服务监督');
       this.hidesection();
       $('#replyIndex').removeClass('hide');
+      $('.ui-personal a').removeClass('hide');
       return;
     },
     adminIndex: function(){
@@ -126,6 +133,14 @@ App.Routers = App.Routers || {};
       $('.ui-header h1').text('服务监督');
       this.hidesection();
       $('#adminIndex').removeClass('hide');
+      $('.ui-personal a').addClass('hide');
+      return;
+    },
+    error: function(){
+      new App.Views.Error();
+      $('.ui-header h1').text('稍后再试');
+      this.hidesection();
+      $('#error').removeClass('hide');
       $('.ui-personal a').addClass('hide');
       return;
     },
