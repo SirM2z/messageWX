@@ -19,7 +19,7 @@
           </p>
           <p>
             <i><%= adminMessageList[i].sid %></i>
-            <span class="<% if(adminMessageList[i].state==1){ %> un-reply <% }%> <% if(adminMessageList[i].isred==1){ %> ui-reddot-s <% }%>">
+            <span class="<% if(adminMessageList[i].state==0){ %> un-reply <% }%> <% if(adminMessageList[i].isred==1){ %> ui-reddot-s <% }%>">
               <% if(adminMessageList[i].state==0){ %> 待回复 <% }else{ %> 已回复 <% } %>
             </span>
           </p>

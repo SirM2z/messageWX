@@ -262,12 +262,14 @@ section.animated{
   height: 100px;
 }
 #index .ui-tab #wrapper .ui-list li div,
-#replyIndex .ui-tab #wrapper .ui-list li div,
+#replyIndex .ui-tab #wrapper-no .ui-list li div,
+#replyIndex .ui-tab #wrapper-have .ui-list li div,
 #adminIndex .ui-tab #wrapper .ui-list li div{
   display:block;
   white-space:nowrap; 
   overflow:hidden; 
   text-overflow:ellipsis;
+  width: 100%;
 }
 #replyIndex .ui-tab-nav li{
   z-index: 100;
@@ -296,6 +298,8 @@ section.animated{
 #message .suggessinfo{
   padding: 3px 10px 15px;
   line-height: 28px;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 #message .ui-input-wrap{
   position: fixed;
