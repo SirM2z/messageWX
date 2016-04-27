@@ -88,6 +88,7 @@ App.Views = App.Views || {};
                   str+='<div class="'+touchStr+'" data-id="'+list[i].id+'" >'+list[i].content+'</div>';
                   str+='</li>';
                   $('.index-wrapper .ui-list').append(str)
+                  _this.myScroll.refresh();
                 }
               });
             }

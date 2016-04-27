@@ -1,10 +1,25 @@
 <div class="ui-tab reply-tab">
   <ul class="ui-tab-nav ui-border-b">
-    <li data-li="1" class="current <% if(isredsNo){ %> ui-reddot-s <% } %> ">待回复</li>
-    <li data-li="2" class="<% if(isredsHave){ %> havereply-reddot-s <% } %> ">已回复</li>
+    <li data-li="1" class="<% if(currentTabReply){ %> 
+    <% if(currentTabReply === 1){ %> current <% } %> 
+    <% }else{ %> current <% } %>
+    <% if(isredsNo){ %> ui-reddot-s <% } %> ">待回复</li>
+    <li data-li="2" class="<% if(currentTabReply){ %> 
+    <% if(currentTabReply === 2){ %> current <% } %> 
+    <% } %>
+    <% if(isredsHave){ %> havereply-reddot-s <% } %> ">已回复</li>
   </ul>
   
-      <div id="wrapper-no" class="<% if(!noReplyList || noReplyList.length<=0){ %> hide <% } %> reply-wrapper-no">
+      <div id="wrapper-no" class="<% if(currentTabReply){ %> 
+      <% if(currentTabReply === 1){ %>
+      <% if(!noReplyList || noReplyList.length<=0){ %> hide <% } %> 
+      <% }else{ %>
+      hide
+      <% } %>
+      <% }else{ %>
+      <% if(!noReplyList || noReplyList.length<=0){ %> hide <% } %> 
+      <% } %>
+      reply-wrapper-no">
         <div id="scroller-no">
       
           <ul class="ui-list ui-list-pure">
@@ -30,7 +45,16 @@
       </div>
       
     
-      <div id="wrapper-have" class="hide reply-wrapper-have">
+      <div id="wrapper-have" class="<% if(currentTabReply){ %> 
+      <% if(currentTabReply === 2){ %>
+      <% if(!haveReplyList || haveReplyList.length<=0){ %> hide <% } %> 
+      <% }else{ %>
+      hide
+      <% } %>
+      <% }else{ %>
+      hide
+      <% } %> 
+      reply-wrapper-have">
         <div id="scroller-have">
       
           <ul class="ui-list ui-list-pure">
@@ -55,7 +79,17 @@
         </div>
       </div>
       
-      <div class="ui-notice <% if(noReplyList.length>0){ %> hide <% } %>" >
+      <div class="ui-notice 
+      <% if(currentTabReply){ %> 
+      <% if(currentTabReply === 1){ %>
+      <% if(noReplyList.length>0){ %> hide <% } %>
+      <% }else{ %>
+      <% if(haveReplyList.length>0){ %> hide <% } %>
+      <% } %>
+      <% }else{ %>
+      <% if(noReplyList.length>0){ %> hide <% } %>
+      <% } %> 
+      " >
         <i></i>
         <p>还没有数据</p>
       </div>

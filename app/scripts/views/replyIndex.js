@@ -74,7 +74,8 @@ App.Views = App.Views || {};
         isredsHave:App.g.isredsHave,
         haveReplyList:this.haveReplyList,
         isFinishNoReply:this.isFinishNoReply,
-        isFinishHaveReply:this.isFinishHaveReply
+        isFinishHaveReply:this.isFinishHaveReply,
+        currentTabReply:App.g.currentTabReply
       }));
       
       if(this.noReplyList.length>4){
@@ -111,6 +112,7 @@ App.Views = App.Views || {};
                   str+='<div class="'+touchStr+'" data-id="'+list[i].id+'" >'+list[i].content+'</div>';
                   str+='</li>';
                   $('.reply-wrapper-no .ui-list').append(str)
+                  _this.myNoScroll.refresh();
                 }
               });
             }
@@ -152,6 +154,7 @@ App.Views = App.Views || {};
                   str+='<div class="'+touchStr+'" data-id="'+list[i].id+'" >'+list[i].content+'</div>';
                   str+='</li>';
                   $('.reply-wrapper-have .ui-list').append(str)
+                  _this.myHaveScroll.refresh();
                 }
               });
             }
@@ -272,6 +275,7 @@ App.Views = App.Views || {};
       //console.log(_this);
       App.g.messageId=_this.data('id');
       //console.log(App.g.messageId);
+      App.g.currentTabReply = $('.current').data('li');
       Backbone.history.navigate('#message',{trigger:true});
     },
     

@@ -45,6 +45,7 @@ window.App = {
     isredsHave:null,  //回复人员列表--待回复--红点
     ajaxIng:false,  //是否在执行ajax
     roletype:null,  //登录人员类型
+    currentTabReply:null,  //回复人员列表页 当前的tab 1为第一个 2为第二个
   },
   URL: {
     studentIsBinding:APIServerHost + '/personnel/student/studentisbinding/',  //获取学生绑定信息

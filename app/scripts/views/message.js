@@ -14,6 +14,8 @@ App.Views = App.Views || {};
     el: '#message',
     
     messageDetail:null,
+    
+    elOff:true,
 
     id: '',
 
@@ -26,7 +28,9 @@ App.Views = App.Views || {};
 
     initialize: function () {
       //this.listenTo(this.model, 'change', this.render);
-      this.$el.off();
+      if(this.elOff){
+        this.$el.off();
+      }
       
       this.getMessageDetail();
       
@@ -79,7 +83,7 @@ App.Views = App.Views || {};
     },
     
     reply: function(){
-      setTimeout(function(){ $(window).scrollTop(document.body.scrollHeight);},100)
+      //setTimeout(function(){ $(window).scrollTop(document.body.scrollHeight);},100)
     },
     
     replyBtn: function(){
@@ -123,6 +127,7 @@ App.Views = App.Views || {};
         success: function success(response) {
           var result = JSON.parse(response);
           if (result.code == '0') {
+            _selfthis.elOff=false;
             _selfthis.initialize();
             //Backbone.history.navigate('#message', {trigger: true});
             App.loading();

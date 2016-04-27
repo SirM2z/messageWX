@@ -24,7 +24,8 @@ App.Views = App.Views || {};
     events: {
       'change .school-select':'schoolSelect',
       'click .sub-btn':'subBtn',
-      'change .service-select':'serviceSelect'
+      'change .service-select':'serviceSelect',
+      'keyup .suggessInfo':'suggessInfoKeyup'
     },
 
     initialize: function () {
@@ -106,9 +107,18 @@ App.Views = App.Views || {};
       }
     },
     
+    suggessInfoKeyup: function(){
+      var textlen=$('.suggessInfo').val().length;
+      $('.ui-textarea i').text(200-textlen);
+    },
+    
     serviceSelect: function(event){
-      var option = $(event.target.options[event.target.options.selectedIndex]);
       var duty=$('.duty');
+      if($(event.target).val().trim()==0){
+        duty.val('职责范围描述');
+        return;
+      }
+      var option = $(event.target.options[event.target.options.selectedIndex]);
       duty.val(option.data('remarks')); 
     },
     
