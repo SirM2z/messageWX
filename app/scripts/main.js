@@ -1,6 +1,6 @@
 /*global app, $*/
-//var APIServerHost= 'http://test.houqinbao.com/gyxt_api';
-var APIServerHost= 'http://120.55.84.193/Geese_Quality_Supervision';
+
+var APIServerHost= 'http://IP/Geese_Quality_Supervision';
 
 window.App = {
   Models: {},
